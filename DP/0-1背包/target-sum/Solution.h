@@ -24,4 +24,14 @@ public:
         }
         return dp[n][s];
     }
+
+    int findTargetSumWays2(vector<int>& nums, int target) {
+        int n = nums.size();
+        int sum = 0;
+        int s = accumulate(nums.begin(), nums.end(),0) - abs(target);
+        if (s < 0 || s % 2) {
+            return 0;
+        }
+        s = s / 2;
+    }
 };
