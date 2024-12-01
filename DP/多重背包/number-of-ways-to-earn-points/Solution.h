@@ -51,7 +51,8 @@ public:
         for(int i = 0; i < n; i++){
             for(int j = 1; j <= target; j++){
                 for(int k = 0; k <= types[i][0]; k++){
-                    
+                    dp[i][j] += dp[i-1][j-types[i-1][1]*k];
+                    dp[i][j] %= 1000000007;
                 }
             }
         }
